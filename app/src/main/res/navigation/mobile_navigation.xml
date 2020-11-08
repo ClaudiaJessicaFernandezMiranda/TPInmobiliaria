@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.tpinmobiliaria.ui.home.HomeFragment"
+        android:label="@string/menu_inicio"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_perfil"
+        android:name="com.example.tpinmobiliaria.ui.perfil.PerfilFragment"
+        android:label="@string/menu_perfil"
+        tools:layout="@layout/fragment_perfil" />
+
+    <fragment
+        android:id="@+id/nav_inmueble"
+        android:name="com.example.tpinmobiliaria.ui.inmueble.InmuebleFragment"
+        android:label="@string/menu_inmueble"
+        tools:layout="@layout/fragment_inmueble" >
+        <action
+            android:id="@+id/action_nav_inmueble_to_inmuebleDetallesFragment"
+            app:destination="@id/inmuebleDetallesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/inmuebleDetallesFragment"
+        android:name="com.example.tpinmobiliaria.ui.inmueble.InmuebleDetallesFragment"
+        android:label="Detalles"
+        tools:layout="@layout/fragment_inmuebles_detalles" />
+
+    <fragment
+        android:id="@+id/nav_contrato"
+        android:name="com.example.tpinmobiliaria.ui.contrato.ContratoInmuebleFragment"
+        android:label="@string/menu_inmueble"
+        tools:layout="@layout/fragment_inmuebles_habilitados" >
+        <action
+            android:id="@+id/action_nav_contratos_to_fragment_contratos"
+            app:destination="@id/fragment_contratos"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_contratos"
+        android:name="com.example.tpinmobiliaria.ui.contrato.ContratoFragment"
+        android:label="@string/menu_contrato"
+        tools:layout="@layout/fragment_contratos" />
+
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.example.tpinmobiliaria.ui.login.Logout"
+        android:label="@string/menu_logout"
+        tools:layout="@layout/fragment_home"/>
+
+</navigation>
